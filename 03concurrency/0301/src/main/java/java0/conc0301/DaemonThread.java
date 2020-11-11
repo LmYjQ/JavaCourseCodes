@@ -17,6 +17,7 @@ public class DaemonThread {
         };
         Thread thread = new Thread(task);
         thread.setName("test-thread-1");
+        // 如果只有一个线程，还设置为守护线程，那么里面的逻辑不会执行
         thread.setDaemon(false);
         thread.start();
     }

@@ -2,6 +2,9 @@ package java0.conc0302.lock;
 
 import java.util.concurrent.locks.LockSupport;
 
+/**
+ * spring大量使用LockSupport
+ */
 public class LockSupportDemo {
     
     public static Object u = new Object();
@@ -30,6 +33,7 @@ public class LockSupportDemo {
         t2.start();
         Thread.sleep(3000L);
         t1.interrupt();
+        // 为什么unpack需要一个线程做参数，因为线程没法自己唤醒自己，只能靠别人叫醒
         LockSupport.unpark(t2);
         t1.join();
         t2.join();

@@ -15,6 +15,7 @@ public class ThreadB implements Runnable {
         String currentThreadName = currentThread.getName();
 
         System.out.println("这是线程的名称：" + currentThreadName);
+        // 活动线程为什么等于4？线程是分组的，
         System.out.println("返回当前线程" + currentThreadName + "的线程组中活动线程的数量:" + Thread.currentThread().getThreadGroup().activeCount());
         System.out.println("返回该线程" + currentThreadName + "的标识符:" + currentThread.getId());
         System.out.println("返回该线程" + currentThreadName + "的优先级:" + currentThread.getPriority());

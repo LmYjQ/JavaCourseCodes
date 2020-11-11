@@ -7,7 +7,7 @@ public class TreeMapDemo {
     
     public static void main(String[] args) {
         
-        // 
+        // 输入无序，输出有序
         TreeMap<Integer, String> map = new TreeMap<>(Comparator.reverseOrder());
         map.put(3, "val");
         map.put(2, "val");

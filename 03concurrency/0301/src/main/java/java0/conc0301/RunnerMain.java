@@ -19,7 +19,7 @@ public class RunnerMain {
         thread2.interrupt();  // i = true
 
         System.out.println(Thread.activeCount());
-        
+        // 啥都不干也有两个线程，有个等待ctrl+c的线程
         Thread.currentThread().getThreadGroup().list();
         System.out.println(Thread.currentThread().getThreadGroup().getParent().activeGroupCount());
         Thread.currentThread().getThreadGroup().getParent().list();

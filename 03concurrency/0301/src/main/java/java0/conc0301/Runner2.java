@@ -11,7 +11,10 @@ public class Runner2 implements Runnable {
         boolean result = Thread.currentThread().isInterrupted();
 
         boolean result1 = Thread.interrupted(); // 重置状态
-        
+        /**
+         *   内部用一个flag变量，循环判断这个变量的值判断是否被打断
+         *   每一次while都判断太浪费资源，所以每n次（比如10000轮）判断一次变量的值
+          */
         boolean result3 = Thread.currentThread().isInterrupted();
 
         System.out.println("Runner2.run result ===>" + result);
