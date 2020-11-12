@@ -1,5 +1,6 @@
 package java0.conc0303.threadlocal;
 
+// 框架使用，隐式传参，多个方法之间不用一直传
 public class ThreadLocalDemo {
     
     private static ThreadLocal<Integer> seqNum = new ThreadLocal<Integer>() {

@@ -3,7 +3,7 @@ package java0.conc0303.collection;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CopyOnWriteArrayListDemo2 {
-    
+    // 并不能证明线程不安全
     private final static CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList();
     
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class CopyOnWriteArrayListDemo2 {
             @Override
             public void run() {
                 while (true) {
-                    if (list.size() > 0) {    // todo ： 下一个get操作执行时，size可能已经是0了
+                    if (list.size() > 0) {    //  下一个get操作执行时，size可能已经是0了
                         String content = list.get(list.size() - 1);
                     }else {
                         break;
